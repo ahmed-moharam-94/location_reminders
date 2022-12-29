@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <!--Data item that holds the reminder details-->
+        <variable
+            name="reminderDataItem"
+            type="com.udacity.project4.locationreminders.reminderslist.ReminderDataItem" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        tools:context=".locationreminders.ReminderDescriptionActivity">
+
+        <TextView
+            android:id="@+id/reminderTitleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/medium_margin"
+            android:layout_marginLeft="@dimen/medium_margin"
+            android:layout_marginTop="@dimen/normal_margin"
+            android:text="@{reminderDataItem.title}"
+            android:textSize="@dimen/text_size_large"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_conversion_absoluteHeight="27dp"
+            tools:layout_conversion_absoluteWidth="130dp"
+            tools:text="@string/reminder_title" />
+
+        <TextView
+            android:id="@+id/reminderDescriionTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/normal_margin"
+            android:text="@{reminderDataItem.description}"
+            android:textSize="@dimen/text_size_normal"
+            app:layout_constraintStart_toStartOf="@+id/reminderTitleTextView"
+            app:layout_constraintTop_toBottomOf="@+id/reminderTitleTextView"
+            tools:layout_conversion_absoluteHeight="22dp"
+            tools:layout_conversion_absoluteWidth="81dp"
+            tools:text="@string/reminder_desc" />
+
+        <TextView
+            android:id="@+id/reminderLocationTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/normal_margin"
+            android:text="@{reminderDataItem.location}"
+            android:textSize="@dimen/text_size_normal"
+            app:layout_constraintStart_toStartOf="@+id/reminderTitleTextView"
+            app:layout_constraintTop_toBottomOf="@+id/reminderDescriionTextView"
+            tools:layout_conversion_absoluteHeight="22dp"
+            tools:layout_conversion_absoluteWidth="81dp"
+            tools:text="@string/reminder_location" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_normal"
+            android:text="@{reminderDataItem.latitude.toString()}"
+            app:layout_constraintStart_toStartOf="@+id/reminderTitleTextView"
+            app:layout_constraintTop_toBottomOf="@+id/reminderLocationTextView"
+            tools:text="@string/latitude_string"/>
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/normal_margin"
+            android:text="@{reminderDataItem.longitude.toString()}"
+            app:layout_constraintStart_toStartOf="@+id/reminderTitleTextView"
+            app:layout_constraintTop_toBottomOf="@+id/textView"
+            tools:text="@string/longitude_string"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
