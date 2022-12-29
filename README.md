@@ -1,10 +1,12 @@
-#Location Reminder
+#
+Location Reminder
 ```
 Remind the user to do something when the user is at a specific location using geofencing.
 Part of Udacity Advanced Android Kotlin Development Nanodegree.
 ```
 
-##Features:
+##
+Features:
 ```
 1. This app enables the user to select a location from the map and  create  a reminder.
 2. When the user reach one of his saved reminders the app sends
